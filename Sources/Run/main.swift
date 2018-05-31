@@ -1,5 +1,6 @@
 import App
-import Vapor
+import Meow
+
 
 /// We have isolated all of our App's logic into
 /// the App module because it makes our app
@@ -17,10 +18,6 @@ import Vapor
 ///
 /// .run() runs the Droplet's commands, 
 /// if no command is given, it will default to "serve"
-let config = try Config()
-try config.setup()
+try Meow.init("mongodb://localhost/feel")
 
-let drop = try Droplet(config)
-try drop.setup()
-
-try drop.run()
+try app(.detect()).run()
