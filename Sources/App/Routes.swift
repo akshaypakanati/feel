@@ -10,4 +10,5 @@ public func routes(_ router: Router) throws {
     // Example of configuring a controller
     let controller = FeelController()
     router.post("feel", use: controller.create)
+    router.get("feels",String.parameter, use: controller.get)
 }

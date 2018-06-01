@@ -8,7 +8,7 @@
 import Meow
 import Vapor
 
-class Feeling: Model, Codable, Content {
+class Feeling: Model, Codable {
 
     var _id = ObjectId()
     var date = Date()

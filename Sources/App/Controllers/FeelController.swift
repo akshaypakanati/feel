@@ -21,4 +21,12 @@ final class FeelController {
         }
     }
     
+    func get(_ req:Request) throws -> HTTPStatus {
+        
+        let param = try req.parameters.next(String.self)
+        print(param)
+        return .ok
+        
+    }
+    
 }
