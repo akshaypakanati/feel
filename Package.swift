@@ -1,22 +1,17 @@
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
     name: "feel",
-    targets: [
-        Target(name: "App"),
-        Target(name: "Run", dependencies: ["App"]),
-    ],
     dependencies: [
-        .Package(url: "https://github.com/vapor/vapor.git", majorVersion: 2),
-        .Package(url: "https://github.com/vapor/fluent-provider.git", majorVersion: 1),
-        .Package(url: "https://github.com/vapor/auth-provider.git", majorVersion: 1)
+        // 💧 A server-side Swift web framework.
+        .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
+        .package(url:"https://github.com/OpenKitten/Meow",from:"1.0.0"),
     ],
-    exclude: [
-        "Config",
-        "Database",
-        "Localization",
-        "Public",
-        "Resources",
+    targets: [
+        .target(name: "App", dependencies: ["Vapor","Meow"]),
+        .target(name: "Run", dependencies: ["App"]),
+        .testTarget(name: "AppTests", dependencies: ["App"]),
     ]
 )
 

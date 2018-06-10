@@ -1,0 +1,13 @@
+<html>
+<body>
+<h3>feel</h3>
+<form method="post" action="/feel">
+  <input type="radio" name="feel" value="1">Extremely Happy<br>
+ <input type="radio" name="feel" value="2">Happy<br>
+ <input type="radio" name="feel" value="3">Neutral<br>
+ <input type="radio" name="feel" value="4">Sad<br>
+ <input type="radio" name="feel" value="5">Extremely Sad<br>
+<p><input type="submit" /></p>
+</form>
+</body>
+</html>
