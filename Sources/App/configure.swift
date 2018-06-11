@@ -1,5 +1,5 @@
 import Vapor
-
+import Leaf
 /// Called before your application initializes.
 ///
 /// [Learn More →](https://docs.vapor.codes/3.0/getting-started/structure/#configureswift)
@@ -11,5 +11,7 @@ public func configure(
     // Register routes to the router
     let router = EngineRouter.default()
     try routes(router)
-    services.register(router, as: Router.self)    
+    services.register(router, as: Router.self)
+    
+    try services.register(LeafProvider())
 }

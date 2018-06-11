@@ -1,7 +1,7 @@
 <html>
 <body>
 <h3>feel</h3>
-<form method="post" action="/feel">
+<form method="post" action="/saveFeel">
   <input type="radio" name="feel" value="1">Extremely Happy<br>
  <input type="radio" name="feel" value="2">Happy<br>
  <input type="radio" name="feel" value="3">Neutral<br>

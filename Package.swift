@@ -7,9 +7,10 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
         .package(url:"https://github.com/OpenKitten/Meow",from:"1.0.0"),
+        .package(url: "https://github.com/vapor/leaf.git", from:"3.0.0-rc.2"),
     ],
     targets: [
-        .target(name: "App", dependencies: ["Vapor","Meow"]),
+        .target(name: "App", dependencies: ["Vapor","Meow","Leaf"]),
         .target(name: "Run", dependencies: ["App"]),
         .testTarget(name: "AppTests", dependencies: ["App"]),
     ]

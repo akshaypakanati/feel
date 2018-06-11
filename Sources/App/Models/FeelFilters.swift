@@ -7,9 +7,9 @@
 
 import Vapor
 
-struct FeelFilters:Content {
-    
+struct FeelFilters:Content {    
     var value:Int?
+    var days:[Int]?
     var date : String?
     
 }
