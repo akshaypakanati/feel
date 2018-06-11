@@ -33,9 +33,10 @@ public func routes(_ router: Router) throws {
     router.get { req -> Future<View> in
         let leaf = try req.make(LeafRenderer.self)
         
-        try Feel.feels()
+        let feels = try Feel.feels()
         
-        let context = [String: String]()
-        return leaf.render("home", context)
+        //let context = [String: String]()
+        return leaf.render("home", ["feels":feels])
+        
     }
 }

@@ -84,7 +84,7 @@
       },
       {
         "package": "Meow",
-        "repositoryURL": "https://github.com/OpenKitten/Meow.git",
+        "repositoryURL": "https://github.com/OpenKitten/Meow",
         "state": {
           "branch": null,
           "revision": "e1414b2e8d1e2ad0276849ecee6ea6c339682538",

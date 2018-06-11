@@ -32,19 +32,32 @@ final class Feel: Model, Content {
         return Array(feels)
     }
     
-    static func feels() throws {
+    static func feels() throws -> Array<AggregateResult> {
         
         let pieline : AggregationPipeline = [
+         //   .match("weekday" == 2),
             .group(groupDocument: [
                 "_id": "$value",
                 "count" : ["$sum":1]]),
             .sort(["_id":.ascending])
         ]
         
-        let _ = try Feel.collection.aggregate(pieline).flatMap(transform: { doc in
-            print(doc.debugDescription)
-        })
-       
+        let cursor = try Feel.collection.aggregate(pieline)
+        var result = Array<AggregateResult>()
+        for doc in cursor {
+            
+            let id = Int(doc["_id"])!
+            let count = Int(doc["count"])!
+            let re = AggregateResult(feelId: id, count: count)
+            result.append(re)
+        }
+       return result
     }
     
 }
+
+struct AggregateResult :Content {
+    var feelId : Int
+    var count : Int
+}
+
