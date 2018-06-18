@@ -23,10 +23,10 @@ public func routes(_ router: Router) throws {
     }
     
     //Fetch Feelings
-    router.get("feels") { (request) -> [Feel] in
+    router.get("feels") { (request) -> [AggregateResult] in
         
-        let filters = try request.query.decode(FeelFilters.self)
-        return try Feel.fetchAllFeels(for:filters)
+        //let filters = try request.query.decode(FeelFilters.self)
+        return try Feel.feels()//fetchAllFeels(for:filters)
         
     }
     
